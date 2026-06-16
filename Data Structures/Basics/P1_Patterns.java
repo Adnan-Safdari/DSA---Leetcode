@@ -27,13 +27,12 @@ public class P1_Patterns {
         *****
          */
         System.out.println("\n==== PATTERN 2 ====");
-        int count = 1;
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < count; j++) {
+        int N = 5;
+        for (int i = 1; i <= N; i++) {
+            for (int j = 0; j < i; j++) {
                 System.out.print("*");
             }
             System.out.println();
-            count++;
         }
     }
 
@@ -121,11 +120,161 @@ public class P1_Patterns {
          *******
         *********
          */
+        System.out.println("\n==== PATTERN 7 ====");
         int N = 5;
-        for(int i=0; i<N; i++){  
-            // for(int N)
+        for(int row = 1; row <= N; row++){  
+        
+            // Printing the space
+            for(int sp = 0; sp < N - row; sp++){
+                System.out.print(" ");
+            }
+
+            // Printing the starts 
+            for(int st = 0; st < ((2 * row) - 1); st++){  // formula = 2*row - 1
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
+
+        static void displayPatternEight(){
+        /*
+
+        *********
+         *******
+          *****
+           ***
+            *
+         */
+        System.out.println("\n==== PATTERN 8 ====");
+        int N = 5;
+        for(int row = N; row >= 0; row--){  
+        
+            // Printing the space
+            for(int sp = 0; sp < N - row; sp++){
+                System.out.print(" ");
+            }
+
+            // Printing the starts 
+            for(int st = 0; st < ((2 * row) - 1); st++){  // formula = 2*row - 1
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+        static void displayPatternNineA(){
+        /*
+
+            *
+           ***
+          *****
+         *******
+        *********
+         *******
+          *****
+           ***
+            *
+         */
+        System.out.println("\n==== PATTERN 9 A ====");
+        int N = 10;
+        // first half
+        for(int row = 1; row <= N/2; row++){  
+        
+            // Printing the space
+            for(int sp = 0; sp < N - row; sp++){
+                System.out.print(" ");
+            }
+
+            // Printing the starts 
+            for(int st = 0; st < ((2 * row) - 1); st++){  // formula = 2*row - 1
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        // second half
+        for(int row = N/2-1; row > 0; row--){  
+        
+            // Printing the space
+            for(int sp = 0; sp < N - row; sp++){
+                System.out.print(" ");
+            }
+
+            // Printing the starts 
+            for(int st = 0; st < ((2 * row) - 1); st++){  // formula = 2*row - 1
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+
+        static void printRowHelperPNine(int row, int height) {
+            // Printing the space
+            for(int sp = 0; sp < height - row; sp++){
+                System.out.print(" ");
+            }
+
+            // Printing the starts 
+            for(int st = 0; st < ((2 * row) - 1); st++){  // formula = 2*row - 1
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        static void displayPatternNineB(){
+        /*
+
+            *
+           ***
+          *****
+         *******
+        *********
+         *******
+          *****
+           ***
+            *
+         */
+        System.out.println("\n==== PATTERN 9 B ====");
+        int N = 10;
+        // first half
+        for(int row = 1; row <= N/2; row++){  
+            printRowHelperPNine(row, N);
+        }
+        // second half
+        for(int row = N/2-1; row > 0; row--){  
+            printRowHelperPNine(row, N);
+        }
+        
+    }
+
+    static void displayPatternTen() {
+        /*
+        *
+        **
+        ***
+        ****
+        *****
+        ****
+        ***
+        **
+        *
+         */
+        System.out.println("\n==== PATTERN 10 ====");
+        int height = 10;
+        for (int row = 1; row <= height/2; row++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int row = (height/2)-1; row > 0; row--) {
+            for (int j = 0; j < row; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
         displayPatternOne();
@@ -134,5 +283,11 @@ public class P1_Patterns {
         displayPatternFour();
         displayPatternFive();
         displayPattenSix();
+        displayPatternSeven();
+        displayPatternEight();
+        displayPatternNineA();
+        displayPatternNineB();
+        displayPatternTen();
+        
     }
 }
