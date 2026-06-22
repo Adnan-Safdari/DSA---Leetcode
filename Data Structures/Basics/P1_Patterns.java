@@ -335,40 +335,84 @@ public class P1_Patterns {
 
     static void displayPatternThirteen() {
         /*
-        1      1
-        12    21
-        123  321
-        12344321
-        
+        1
+        2 3
+        4 5 6
+        7 8 9 10
+        11 12 13 14 15
          */
-        System.out.println("\n==== PATTERN 12 ====");
-        int height = 4;
-        int rowSize = height * 2;
-        
+        System.out.println("\n==== PATTERN 13 ====");
+        int height = 5;
+        int counter = 1;
         for (int row = 1; row <= height; row++) {
-
-            // - - - Printing ascending - - -
-            for (int j = 1; j <= row; j++) {
-                System.out.print(j);
+            for(int j = 1; j<=row; j++){
+                System.out.print(counter++ + " ");
             }
-
-            // - - - Printing spaces - - -
-            int spaces = rowSize - (row *2);
-            for(int k = spaces; k > 0; k--){
-                System.out.print(" ");
-            }
-
-            // - - - Printing descending - - -
-            for (int l = row; l >= 1; l--) {
-                System.out.print(l);
-            }
-
             System.out.println();
         }
 
     }
 
- 
+    static void displayPatternFourteen() {
+        /*
+        A
+        AB
+        ABC
+        ABCD
+        ABCDE
+         */
+        System.out.println("\n==== PATTERN 14 ====");
+        int height = 5;
+        for (int row = 1; row <= height; row++) {
+            char ch = 'A';
+            for(int j = 1; j<=row; j++){
+                System.out.print(ch++);
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void displayPatternFifteen() {
+        /*
+        ABCDE
+        ABCD
+        ABC
+        AB
+        A
+         */
+        System.out.println("\n==== PATTERN 15 ====");
+        int height = 5;
+        for (int row = height; row >= 1; row--) {
+            char ch = 'A';
+            for(int j = 1; j<=row; j++){
+                System.out.print(ch++);
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void displayPatternSixteen() {
+        /*
+        A
+        BB
+        CCC
+        DDDD
+        EEEEE
+         */
+        System.out.println("\n==== PATTERN 14 ====");
+        int height = 5;
+        char ch = 'A';
+        for (int row = 1; row <= height; row++) {
+            for(int j = 1; j<=row; j++){
+                System.out.print(ch);
+            }
+            System.out.println();
+            ch++;
+        }
+
+    }
 
 
 
@@ -387,6 +431,8 @@ public class P1_Patterns {
         displayPatternEleven();
         displayPatternTwelve();
         displayPatternThirteen();
-        
+        displayPatternFourteen();
+        displayPatternFifteen();
+        displayPatternSixteen();
     }
 }
