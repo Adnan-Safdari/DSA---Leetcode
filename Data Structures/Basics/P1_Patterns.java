@@ -276,6 +276,102 @@ public class P1_Patterns {
     }
 
 
+    static void displayPatternEleven() {
+        /*
+        1
+        01
+        101
+        0101
+        10101
+         */
+        System.out.println("\n==== PATTERN 11 ====");
+        int height = 5;
+        
+        for (int row = 1; row <= height; row++) {
+            int prevNum = (row % 2 == 0) ? 0 : 1;  // Odd always starts with 1 and even with 0 (we giving opposite due to next switch)
+            for (int j = 0; j < row; j++) {
+                System.out.print(prevNum);
+                prevNum = 1 - prevNum; // returns 1 or 0
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void displayPatternTwelve() {
+        /*
+        1      1
+        12    21
+        123  321
+        12344321
+        
+         */
+        System.out.println("\n==== PATTERN 12 ====");
+        int height = 4;
+        int rowSize = height * 2;
+        
+        for (int row = 1; row <= height; row++) {
+
+            // - - - Printing ascending - - -
+            for (int j = 1; j <= row; j++) {
+                System.out.print(j);
+            }
+
+            // - - - Printing spaces - - -
+            int spaces = rowSize - (row *2);
+            for(int k = spaces; k > 0; k--){
+                System.out.print(" ");
+            }
+
+            // - - - Printing descending - - -
+            for (int l = row; l >= 1; l--) {
+                System.out.print(l);
+            }
+
+            System.out.println();
+        }
+
+    }
+
+    static void displayPatternThirteen() {
+        /*
+        1      1
+        12    21
+        123  321
+        12344321
+        
+         */
+        System.out.println("\n==== PATTERN 12 ====");
+        int height = 4;
+        int rowSize = height * 2;
+        
+        for (int row = 1; row <= height; row++) {
+
+            // - - - Printing ascending - - -
+            for (int j = 1; j <= row; j++) {
+                System.out.print(j);
+            }
+
+            // - - - Printing spaces - - -
+            int spaces = rowSize - (row *2);
+            for(int k = spaces; k > 0; k--){
+                System.out.print(" ");
+            }
+
+            // - - - Printing descending - - -
+            for (int l = row; l >= 1; l--) {
+                System.out.print(l);
+            }
+
+            System.out.println();
+        }
+
+    }
+
+ 
+
+
+
     public static void main(String[] args) {
         displayPatternOne();
         displayPatternTwo();
@@ -288,6 +384,9 @@ public class P1_Patterns {
         displayPatternNineA();
         displayPatternNineB();
         displayPatternTen();
+        displayPatternEleven();
+        displayPatternTwelve();
+        displayPatternThirteen();
         
     }
 }
